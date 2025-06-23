@@ -1,0 +1,45 @@
+
+format = """
+$directory$git_branch$python$conda$git_metrics$cmd_duration
+$character
+"""
+add_newline = false
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"
+
+[cmd_duration]
+min_time = 5_000 # Show command duration over 10,000 milliseconds (=10 sec)
+format = "$duration(gray)"
+
+[directory]
+format = "[$path](bold blue) "
+truncation_length = 100
+truncate_to_repo = true
+
+[git_branch]
+format = '[$branch]($style) '
+style = 'bright-green'
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = '[🍒 PICKING](bold red)'
+
+
+[git_metrics]
+disabled = false
+added_style = 'bold blue'
+format = '[$added](cyan) [$deleted](bright-red) '
+
+[conda]
+format = '[\($environment\)](bright-green) '
+
+[python]
+format = '[$virtualenv](bright-yellow) '
+pyenv_version_name = false
+detect_extensions = []
+detect_files = []
+detect_folders = []
+
+

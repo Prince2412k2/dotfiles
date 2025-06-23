@@ -1,0 +1,20 @@
+#!/bin/bash
+
+main() {
+  path=$(realpath $1)
+
+  if [[ ! -e "$path" ]]; then
+    echo "Path doesnt exists"
+    exit 0
+  fi
+  cat >~/.config/hypr/hyprpaper.conf <<EOF
+preload = $path
+wallpaper = eDP-1, $path
+EOF
+  pkill hyprpaper || true
+  hyprpaper >/dev/null 2>&1 &
+  disown
+  switch
+}
+
+main $1

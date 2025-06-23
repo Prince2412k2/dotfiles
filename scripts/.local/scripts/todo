@@ -1,0 +1,51 @@
+#!/bin/bash
+
+listview() {
+  'ls' ~/todos | fzf --preview 'gumcat ~/todos/{}'
+}
+
+selection() {
+  file=$(listview)
+  [[ -z "$file" ]] && exit 1
+  nvim "$HOME/todos/$file"
+}
+
+create() {
+  nvim "$HOME/todos/$1"
+}
+
+##AARGS##
+show_help() {
+  echo "Usage: $0 [-h] [-c filename] "
+  echo
+  echo "Options:"
+  echo "  -h            Show this help message"
+  echo "  -c filename   Create a new file with the given name"
+}
+
+if [[ $# -eq 0 ]]; then
+  selection
+  exit 0
+fi
+
+while getopts ":hc:" opt; do
+  case $opt in
+  h)
+    show_help
+    exit 0
+    ;;
+  c)
+    create "$OPTARG"
+    exit 0
+    ;;
+  \?)
+    echo "Invalid option: -$OPTARG" >&2
+    show_help
+    exit 1
+    ;;
+  :)
+    echo "Option -$OPTARG requires an argument." >&2
+    show_help
+    ;;
+  esac
+done

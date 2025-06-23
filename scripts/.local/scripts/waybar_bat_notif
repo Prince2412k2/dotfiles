@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Config
+THRESHOLD=20
+BATTERY_PATH="/sys/class/power_supply/BAT0/capacity"
+STATUS_PATH="/sys/class/power_supply/BAT0/status"
+STATE_FILE="/tmp/.battery_notified"
+
+# Read battery data
+PERCENT=$(cat "$BATTERY_PATH")
+STATUS=$(cat "$STATUS_PATH")
+
+# Send notification if low and discharging
+if [ "$PERCENT" -lt "$THRESHOLD" ] && [ "$STATUS" = "Discharging" ]; then
+  if [ ! -f "$STATE_FILE" ]; then
+    notify-send -u critical "🔋 Battery Low" "Battery is at ${PERCENT}%!"
+    touch "$STATE_FILE"
+  fi
+else
+  # Clear state if no longer critical
+  [ -f "$STATE_FILE" ] && rm "$STATE_FILE"
+fi

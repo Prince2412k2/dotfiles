@@ -1,0 +1,41 @@
+
+# Enable extended globbing and completion features
+autoload -Uz compinit
+compinit
+
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Show all matches immediately, even if ambiguous
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-prompt ''
+
+# Add trailing slash to symlinked dirs
+zstyle ':completion:*' mark-symlinked-directories true
+
+
+
+# Show all possible completions (no paging)
+zstyle ':completion:*' always-list yes
+
+# Ask if there are more than 200 completions
+zstyle ':completion:*' list-max 200
+
+# Arrow key history search (prefix matching)
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search    # Up arrow
+bindkey '^[[B' down-line-or-beginning-search  # Down arrow
+
+# Arrow keys (left/right)
+bindkey '^[[C' forward-char
+bindkey '^[[D' backward-char
+
+bindkey "^[[1;5C" forward-word     # Ctrl+Right
+bindkey "^[[1;5D" backward-word    # Ctrl+Left
+
+# Enable UTF-8 input/output (equivalent to input-meta/output-meta)
+export LANG=en_US.UTF-8
+setopt MULTIBYTE
+

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [[ -z $1 ]]; then
+  echo "Usage: $0 <file-path | markdown-string>"
+  exit 1
+fi
+
+main() {
+  if [[ -f $1 ]]; then
+    gum format <"$1"
+  else
+    echo "$*" | gum format
+  fi
+}
+main "$@"

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ -z $MODE ]]; then
+  MODE=$(gum choose "DARK" "LIGHT")
+fi
+
+if [[ $MODE == "DARK" ]]; then
+  cp ~/.config/waybar/colors/light.css ~/.config/waybar/style.css
+  cp ~/.config/waybar/colors/light.css ~/.config/waybar/style.css
+  pkill waybar || true
+  waybar >/dev/null 2>&1 &
+  disown
+elif [[ $MODE == "LIGHT" ]]; then
+  cp ~/.config/waybar/colors/dark.css ~/.config/waybar/style.css
+  pkill waybar || true
+  waybar >/dev/null 2>&1 &
+  disown
+fi

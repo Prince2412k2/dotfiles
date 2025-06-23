@@ -1,0 +1,27 @@
+if command -v mise &> /dev/null; then
+  eval "$(mise activate bash)"
+fi
+
+
+
+
+if command -v fzf &> /dev/null; then
+  source ~/.local/share/fzf/completion.bash
+  source ~/.local/share/fzf/key-bindings.bash
+fi
+ 
+ 
+
+# Enable autoenv
+export AUTOENV_HOME="$HOME/.autoenv"
+[[ -f "$AUTOENV_HOME/activate.sh" ]] && source "$AUTOENV_HOME/activate.sh"
+
+
+
+eval "$(starship init bash)"
+
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init bash)"
+fi
+
+
