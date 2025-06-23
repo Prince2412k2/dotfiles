@@ -1,1 +1,0 @@
-/home/prince/.p10k.zsh
