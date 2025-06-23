@@ -55,4 +55,4 @@ yt-dlp
 zen-browser-bin
 zoxide
 zsh
-
+chafa
