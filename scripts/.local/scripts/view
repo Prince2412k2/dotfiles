@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [[ -z $1 && -t 0 ]]; then
+  echo "Usage: $0 <image-file>  OR  cat file.jpg | $0"
+  exit 1
+fi
+
+main() {
+  if [[ -n $1 && -f $1 ]]; then
+    chafa --passthrough tmux -f kitty "$1"
+  else
+    chafa --passthrough tmux -f kitty -
+  fi
+}
+
+main "$@"

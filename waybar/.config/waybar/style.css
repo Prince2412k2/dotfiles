@@ -15,24 +15,23 @@
 
 /* #101010 */
 #workspaces {
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 1px;
   margin: 3px;
-  background: black;
+  background: transparent;
   margin-left: 0rem;
 }
 
 #workspaces button {
   /*   color: #99d1db; */
   color: #B3D8A8;
-  /* border-radius: 5px; */
-  border-radius: 2px 2px 2px 2px;
+  border-radius: 5px;
   padding: 0.4rem;
 }
 
 #workspaces button.active {
   /*   color: #babbf1; */
   color: #FBFFE4;
-  border-radius: 2px 2px 2px 2px;
+  border-radius: 5px;
 }
 
 #workspaces button:hover {
@@ -53,25 +52,24 @@
 #memory,
 #custom-lock,
 #custom-power {
-  background-color: black;
-  padding: 0.1rem 1.1rem;
-  margin: 4px 0px;
+  background-color: transparent;
+  padding: 0.1rem 1rem;
+  margin: 4px 0.1px;
+  border-radius: 0px 0px 0px 0px;
 }
 
 
 
 #clock {
   color: #8caaee;
-  background-color: black;
-  margin: .3rem 1rem;
-  padding: 0.1rem 1rem;
-  border-radius: 5px 5px 5px 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 0rem;
 }
 
 #battery {
   color: #FFB4A2;
 }
-
 
 #battery.discharging {
   color: #FFEAC5;
@@ -90,26 +88,32 @@
 }
 
 
+#backlight,
+#battery {
+  border-radius: 0;
+}
 
 #pulseaudio.input {
   color: #FFB4A2;
+  border-radius: 0px 5px 5px 0px;
   padding-right: 0.1rem;
 }
 
 
 #pulseaudio.output {
   color: #ea999c;
+  border-radius: 5px 10px 10px 5%;
   padding-right: 0.1rem;
-  border-radius: 5px 0px 0px 5px;
 }
 
 
 #custom-lock {
+  border-radius: 5px 0px 0px 5px;
   color: #babbf1;
-  border-radius: 0px 5px 5px 0px;
 }
 
 #custom-power {
+  border-radius: 0px 5px 5px 0px;
   color: #e78284;
 }
 
