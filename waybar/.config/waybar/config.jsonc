@@ -1,11 +1,14 @@
 {
   "layer": "top",
   "position": "top",
-  "height":0,
+  "height": 0,
   "modules-left": [
-        "hyprland/workspaces"
-    ],
-  "modules-center": ["clock"],
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/spotify"
+  ],
   "modules-right": [
     "pulseaudio#output",
     "pulseaudio#input",
@@ -14,7 +17,7 @@
     "memory",
     "tray",
     "custom/lock",
-    "custom/bat",
+    "custom/bat"
   ],
   "hyprland/workspaces": {
     "format": "{name}: {icon}",
@@ -32,24 +35,22 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%d - %H:%M}"
   },
-
-"battery": {
-  "full-at": 99,
-  "interval": 60,
-  "format-discharging": "{capacity}%",
-  "format-charging": "{capacity}% ",
-  "format-plugged": "{capacity}% ",
-  "states": {
-    "warning": 20,
-    "critical": 10
-  }
-},
+  "battery": {
+    "full-at": 99,
+    "interval": 60,
+    "format-discharging": "{capacity}%",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
   "network": {
     "format-wifi": "󰤢 ",
     "format-ethernet": "󰈀 ",
     // "format-disconnected": "󰤠 ",
     "format-disconnected": "󰤮",
-    
     "interval": 5,
     "tooltip": true,
     "tooltip-format": "{ifname} : {essid} : {signalStrength}",
@@ -63,9 +64,13 @@
     "format": "{icon} {volume}%",
     "format-muted": " ",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": [
+        "",
+        "",
+        " "
+      ]
     },
-    "max-volume" : 153,
+    "max-volume": 153,
     "on-click": "pavucontrol"
   },
   "pulseaudio#input": {
@@ -79,13 +84,29 @@
     "format": ""
   },
   "later": {
-        "format": "<span class='icon'>{icon}</span> <span class='text'>{text}</span>"
-    },
+    "format": "<span class='icon'>{icon}</span> <span class='text'>{text}</span>"
+  },
   "custom/bat": {
-    "format":"",
-    "interval" : 60,
+    "format": "",
+    "interval": 60,
     "exec": "$HOME/.config/waybar/scripts/bat_notif.sh",
   },
-
+  "custom/spotify": {
+    "exec": "~/.config/waybar/scripts/mediaplayer.py --player spotify",
+    "format": "{}  ",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+  "custom/media": {
+    "format": "{0} {1}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
+    },
+    "escape": true
+  }
 }
-
