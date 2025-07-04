@@ -7,11 +7,11 @@ listview() {
 selection() {
   file=$(listview)
   [[ -z "$file" ]] && exit 1
-  nvim "$HOME/todos/$file"
+  nvim +"set filetype=markdown" "$HOME/todos/$file"
 }
 
 create() {
-  nvim "$HOME/todos/$1"
+  nvim +"set filetype=markdown" "$HOME/todos/$1"
 }
 
 ##AARGS##

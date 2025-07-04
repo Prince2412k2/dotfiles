@@ -89,7 +89,7 @@
   "custom/bat": {
     "format": "",
     "interval": 60,
-    "exec": "$HOME/.config/waybar/scripts/bat_notif.sh",
+    "exec": "$HOME/.config/waybar/scripts/bat_notif.sh"
   },
   "custom/spotify": {
     "exec": "~/.config/waybar/scripts/mediaplayer.py --player spotify",
