@@ -48,6 +48,7 @@
 #clock,
 #battery,
 #network,
+#bluetooth,
 #cpu,
 #memory,
 #custom-lock,
@@ -118,4 +119,12 @@
 
 #network.wifi {
   color: #8caaee;
+}
+
+#bluetooth {
+  font-size: 14px;
+  padding: 1px;
+  padding-left: 10px;
+  padding-top: 2px;
+  /* padding-left: 10px; */
 }

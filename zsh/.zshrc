@@ -29,6 +29,7 @@ export VISUAL=nvim
 
 #path
 export PATH="$PATH:$HOME/.local/scripts"
+export PATH="/$PATH:$HOME/.local/share/mise/installs/npm/9.9.4/bin"
 export PATH=$PATH:/home/prince/.spicetify
 
 

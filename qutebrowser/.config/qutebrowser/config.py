@@ -34,8 +34,8 @@ c.colors.tabs.odd.bg = "#00000000"
 c.colors.tabs.bar.bg = "#00000000"
 # c.colors.tabs.even.bg = xresources["*.background"]
 # c.colors.tabs.odd.bg = xresources["*.background"]
-c.colors.tabs.even.fg = xresources["*.color0"]
-c.colors.tabs.odd.fg = xresources["*.color0"]
+c.colors.tabs.even.fg = xresources["*color0"]
+c.colors.tabs.odd.fg = xresources["*color0"]
 c.colors.tabs.selected.even.bg = xresources["*.foreground"]
 c.colors.tabs.selected.odd.bg = xresources["*.foreground"]
 c.colors.tabs.selected.even.fg = xresources["*.background"]
@@ -65,9 +65,9 @@ c.colors.downloads.error.bg = xresources["*.background"]
 c.colors.downloads.error.fg = xresources["*.foreground"]
 
 c.colors.downloads.bar.bg = xresources["*.background"]
-c.colors.downloads.start.bg = xresources["*.color10"]
+c.colors.downloads.start.bg = xresources["*color10"]
 c.colors.downloads.start.fg = xresources["*.foreground"]
-c.colors.downloads.stop.bg = xresources["*.color8"]
+c.colors.downloads.stop.bg = xresources["*color8"]
 c.colors.downloads.stop.fg = xresources["*.foreground"]
 
 c.colors.tooltip.bg = xresources["*.background"]
