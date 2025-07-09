@@ -5,7 +5,10 @@ export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 
 #add scripts to path
-PATH="$PATH":"$HOME/.local/scripts/"
+export PATH="$PATH:$HOME/.local/scripts"
+export PATH="/$PATH:$HOME/.cargo/bin/"
+export PATH=$PATH:/home/prince/.spicetify
+
 #tmux-sessionizer
 bind '"\C-f":"tmux-sessionizer\n"'
 

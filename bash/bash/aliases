@@ -1,7 +1,13 @@
+
 #Custom
 alias cb="wl-copy"
 alias yt="yt-dlp -f 'bestvideo[height=1080][ext=mp4]/best[height=1080]'"
 # alias view="chafa --passthrough tmux -f kitty"
+
+#Network
+alias wf="nmcli connection up 'Prince’s iPhone'"
+alias bt="bluetoothctl connect E8:9E:13:5F:18:B4"
+
 
 ##from omakub
 # File system
@@ -60,4 +66,3 @@ alias act="source act"
 ## temp
 alias note="python3 /home/prince/Documents/Project/Noter/main.py"
 set +h
-alias wf="nmcli connection up 'Prince’s iPhone'"
