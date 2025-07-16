@@ -7,16 +7,14 @@
   ],
   "modules-center": [
     "clock",
-    "custom/spotify"
+    "mpris"
   ],
   "modules-right": [
     "pulseaudio#output",
     "pulseaudio#input",
     "battery",
     "network",
-    "bluetooth",
     "memory",
-    "tray",
     "custom/lock",
     "custom/bat"
   ],
@@ -26,10 +24,6 @@
       "active": "",
       "default": ""
     }
-  },
-  "tray": {
-    "icon-size": 12,
-    "spacing": 5
   },
   "clock": {
     "timezone": "Asia/Kolkkata",
@@ -92,29 +86,21 @@
     "interval": 60,
     "exec": "$HOME/.config/waybar/scripts/bat_notif.sh"
   },
-  "custom/spotify": {
-    "exec": "~/.config/waybar/scripts/mediaplayer.py --player spotify",
-    "format": "{}  ",
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
-  },
-  "custom/media": {
-    "format": "{0} {1}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
+  "mpris": {
+    "format": "{player_icon} {artist} {length}",
+    "format-paused": "{status_icon} <i>{artist}</i>",
+    "tooltip-format": "{player}\n{dynamic}",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵",
+      "spotify": " "
     },
-    "escape": true
-  },
-  "bluetooth": {
-    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-    "format": "",
-    "format-connected": "",
-    "format-disabled": "", // an empty format will hide the module
-    "format-disconnected": ""
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "ignored-players": [
+      "zen-browser",
+      "firefox"
+    ]
   }
 }

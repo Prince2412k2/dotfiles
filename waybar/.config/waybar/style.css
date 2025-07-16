@@ -43,13 +43,12 @@
 #pulseaudio.input,
 #pulseaudio.output,
 #custom-music,
-#tray,
 #backlight,
 #clock,
 #battery,
 #network,
 #bluetooth,
-#cpu,
+#mpris,
 #memory,
 #custom-lock,
 #custom-power {
@@ -64,6 +63,13 @@
   color: #8caaee;
   background-color: black;
   margin: .3rem 1rem;
+  padding: 0.1rem 1rem;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#mpris {
+  color: #8caaee;
+  background-color: black;
   padding: 0.1rem 1rem;
   border-radius: 5px 5px 5px 5px;
 }
