@@ -5,8 +5,10 @@ alias yt="yt-dlp -f 'bestvideo[height=1080][ext=mp4]/best[height=1080]'"
 # alias view="chafa --passthrough tmux -f kitty"
 
 #Network
-alias wf="nmcli connection up 'Prince’s iPhone'"
+alias wf='nmcli -t -f NAME c show | fzf --prompt="Select connection: " | xargs -r nmcli c up'
 alias bt="bluetoothctl connect E8:9E:13:5F:18:B4"
+
+# alias bt='nmcli -t -f NAME c show | fzf --prompt="Select connection: " | xargs -r nmcli c up'
 
 
 ##from omakub
