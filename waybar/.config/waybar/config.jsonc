@@ -44,7 +44,6 @@
   "network": {
     "format-wifi": "󰤢 ",
     "format-ethernet": "󰈀 ",
-    // "format-disconnected": "󰤠 ",
     "format-disconnected": "󰤮",
     "interval": 5,
     "tooltip": true,
@@ -71,7 +70,7 @@
   "pulseaudio#input": {
     "format-source": "",
     "format-source-muted": " ",
-    "format": "{format_source}",
+    "format": "{format_source}"
   },
   "custom/lock": {
     "tooltip": false,

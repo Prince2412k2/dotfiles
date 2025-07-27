@@ -15,9 +15,9 @@
 
 /* #101010 */
 #workspaces {
-  border-radius: 1px;
+  border-radius: 5px 5px 5px 5px;
   margin: 3px;
-  background: transparent;
+  background: black;
   margin-left: 0rem;
 }
 
@@ -43,7 +43,6 @@
 #pulseaudio.input,
 #pulseaudio.output,
 #custom-music,
-#tray,
 #backlight,
 #clock,
 #battery,
@@ -53,33 +52,32 @@
 #memory,
 #custom-lock,
 #custom-power {
-  background-color: transparent;
-  padding: 0.1rem 1rem;
-  margin: 4px 0.1px;
-  border-radius: 0px 0px 0px 0px;
+  background-color: black;
+  padding: 0.1rem 1.1rem;
+  margin: 4px 0px;
 }
 
 
 
 #clock {
   color: #8caaee;
-  background-color: transparent;
-  border-radius: 5px;
-  margin: 0rem;
+  background-color: black;
+  margin: .3rem 1rem;
+  padding: 0.1rem 1rem;
+  border-radius: 5px 5px 5px 5px;
 }
 
 #mpris {
   color: #8caaee;
-  background-color: transparent;
+  background-color: black;
   padding: 0.1rem 1rem;
-  border-radius: 5px;
-
+  border-radius: 5px 5px 5px 5px;
 }
-
 
 #battery {
   color: #FFB4A2;
 }
+
 
 #battery.discharging {
   color: #FFEAC5;
@@ -98,32 +96,26 @@
 }
 
 
-#backlight,
-#battery {
-  border-radius: 0;
-}
 
 #pulseaudio.input {
-  color: #FFB4A2;
-  border-radius: 0px 5px 5px 0px;
+  color: #FFC1B4;
   padding-right: 0.1rem;
 }
 
 
 #pulseaudio.output {
-  color: #ea999c;
-  border-radius: 5px 10px 10px 5%;
+  color: #FFC1B4;
   padding-right: 0.1rem;
+  border-radius: 5px 0px 0px 5px;
 }
 
 
 #custom-lock {
-  border-radius: 5px 0px 0px 5px;
   color: #babbf1;
+  border-radius: 0px 5px 5px 0px;
 }
 
 #custom-power {
-  border-radius: 0px 5px 5px 0px;
   color: #e78284;
 }
 
@@ -135,10 +127,7 @@
   color: #8caaee;
 }
 
-
 #bluetooth {
-  color: #8caaee;
-
   font-size: 14px;
   padding: 1px;
   padding-left: 10px;

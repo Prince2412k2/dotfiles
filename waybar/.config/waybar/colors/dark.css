@@ -104,14 +104,14 @@
 }
 
 #pulseaudio.input {
-  color: #FFB4A2;
+  color: #FFC1B4;
   border-radius: 0px 5px 5px 0px;
   padding-right: 0.1rem;
 }
 
 
 #pulseaudio.output {
-  color: #ea999c;
+  color: #FFC1B4;
   border-radius: 5px 10px 10px 5%;
   padding-right: 0.1rem;
 }

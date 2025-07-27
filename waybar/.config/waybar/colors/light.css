@@ -98,13 +98,13 @@
 
 
 #pulseaudio.input {
-  color: #FFB4A2;
+  color: #FFC1B4;
   padding-right: 0.1rem;
 }
 
 
 #pulseaudio.output {
-  color: #ea999c;
+  color: #FFC1B4;
   padding-right: 0.1rem;
   border-radius: 5px 0px 0px 5px;
 }
