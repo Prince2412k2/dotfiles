@@ -87,7 +87,7 @@
     "exec": "$HOME/.config/waybar/scripts/bat_notif.sh"
   },
   "mpris": {
-    "format": "{player_icon} {artist} {length}",
+    "format": "{player_icon} {artist}",
     "format-paused": "{status_icon} <i>{artist}</i>",
     "tooltip-format": "{player}\n{dynamic}",
     "player-icons": {

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define menu options
-options="Suspend\nPower Off\nRestart\nHibernate"
+options="Suspend\nPower Off\nRestart\nHibernate\nLock"
 
 # Show menu
 choice=$(echo -e "$options" | rofi -dmenu -p "Power Menu")
@@ -25,6 +25,11 @@ case "$choice" in
   hyprlock &
   disown
   systemctl hibernate
+  ;;
+"Lock")
+  sleep 0.5s
+  hyprlock &
+  disown
   ;;
 esac
 

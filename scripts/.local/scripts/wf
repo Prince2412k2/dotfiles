@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+nmcli -t -f NAME c show  | awk -F "\n" '{print "\""$0 "\""}' | fzf --prompt="Select connection: " | xargs -r nmcli c up
+
