@@ -55,7 +55,7 @@
     "format": "  {used:0.1f}G/{total:0.1f}G"
   },
   "pulseaudio#output": {
-    "format": "{icon} {volume}%",
+    "format": "{icon} {volume}",
     "format-muted": " ",
     "format-icons": {
       "default": [
