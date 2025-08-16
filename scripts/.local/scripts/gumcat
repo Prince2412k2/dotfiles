@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ -z $1 ]]; then
-  echo "Usage: $0 <file-path | markdown-string>"
+  echo "Usage: gumcat <file-path | markdown-string>"
   exit 1
 fi
 
