@@ -51,7 +51,6 @@ webm2mp4() {
 
 ##custome
 
-alias windows="sudo mount -t ntfs-3g /dev/nvme0n1p3 /mnt/windows"
 alias keys="n ~/bash/aliases"
 
 alias gls="git log --pretty=format:'%C(auto)%h %C(bold blue)%an%Creset %C(green)%ad%Creset %C(yellow)%d%Creset %C(reset)- %s' --date=short --graph --abbrev-commit --decorate --all"
@@ -63,6 +62,4 @@ alias gb="git branch --show-current"
 alias act="source act"
 
 
-## temp
-alias note="python3 /home/prince/Documents/Project/Noter/main.py"
 set +h
