@@ -1,5 +1,6 @@
 
 #Custom
+source ~/bash/volitile
 alias cb="wl-copy"
 alias yt="yt-dlp -f 'bestvideo[height=1080][ext=mp4]/best[height=1080]'"
 # alias view="chafa --passthrough tmux -f kitty"

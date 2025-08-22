@@ -6,6 +6,8 @@ else
   selected=$(find ~/projects ~/work ~/Tutorial -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
+echo "alias th='cd $selected'" >~/bash/volitile
+
 if [[ -z $selected ]]; then
   exit 0
 fi
