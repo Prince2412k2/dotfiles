@@ -49,6 +49,7 @@ bindkey -e
 source ~/.zshinputcr
 source ~/bash/aliases
 
+source /usr/share/nvm/init-nvm.sh 
 
 eval "$(zoxide init zsh)"
 
