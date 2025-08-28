@@ -49,29 +49,7 @@ bindkey -e
 source ~/.zshinputcr
 source ~/bash/aliases
 
-_conda_lazy_init() {
-  # Unset the alias to prevent recursion
-  unalias conda 2>/dev/null
-  unset -f _conda_lazy_init
-
-  # Actually initialize conda
-  __conda_setup="$('/home/prince/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-  else
-    if [ -f "/home/prince/miniconda3/etc/profile.d/conda.sh" ]; then
-      . "/home/prince/miniconda3/etc/profile.d/conda.sh"
-    else
-      export PATH="/home/prince/miniconda3/bin:$PATH"
-    fi
-  fi
-  unset __conda_setup
-
-  # Re-run the command the user originally typed
-  conda "$@"
-}
-
-alias conda='_conda_lazy_init'
+source /usr/share/nvm/init-nvm.sh 
 
 eval "$(zoxide init zsh)"
 
