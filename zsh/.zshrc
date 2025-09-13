@@ -46,10 +46,10 @@ bindkey '^X^E' edit-command-line
 bindkey -e
 ##############################################################
 
+source /usr/share/nvm/init-nvm.sh 
 source ~/.zshinputcr
 source ~/bash/aliases
 
-source /usr/share/nvm/init-nvm.sh 
 
 eval "$(zoxide init zsh)"
 

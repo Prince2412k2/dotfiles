@@ -6,6 +6,18 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
 vim.opt.rtp:prepend(lazypath)
+vim.g.clipboard = {
+  name = "clip",
+  copy = {
+    ["+"] = "clip.exe",
+    ["*"] = "clip.exe",
+  },
+  paste = {
+    ["+"] = 'powershell.exe -command "Get-Clipboard"',
+    ["*"] = 'powershell.exe -command "Get-Clipboard"',
+  },
+  cache_enabled = 0,
+}
 
 require("lazy").setup({
   spec = {

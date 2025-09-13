@@ -1,20 +1,35 @@
-#!/bin/bash
+#!/usr/bin/env zsh
+
+# Directories to search for virtualenvs
+
+
+  DIRS_TO_CHECK=(~/projects ~/Tutorial ~/temp)
+
+# Interactive picker
+activate_env_glob() {
+  selected=$(fd -HI --type f --full-path '/bin/activate$' "${DIRS_TO_CHECK[@]}" --absolute-path | awk -F'/' '{ print $(NF-3),"->",$0 }' |fzf --delimiter=' ' | awk '{ print $3 }')
+  if [ -n "$selected" ]; then
+    source "$selected"
+    echo "Activated: $selected"
+  fi
+}
+
 get_env() {
-  if [ -d ".env" ]; then
-    get_activate ".env"
-  elif [ -d ".venv" ]; then
-    get_activate ".venv"
-  else
-    echo "Python env not found in $(pwd)"
-  fi
+  for dir in ".env" ".venv"; do
+    if [ -f "$dir/bin/activate" ]; then
+      source "$dir/bin/activate"
+      echo "Activated $dir"
+      return
+    fi
+  done
+  echo "Python env not found in $(pwd)"
 }
 
-get_activate() {
-  if [ -f "$1/bin/activate" ]; then
-    source "$1/bin/activate"
+activate() {
+  if [ "$1" = "l" ]; then
+    activate_env_glob
   else
-    echo "Activate script not found in $1"
+    get_env
   fi
 }
-
-get_env
+activate $1

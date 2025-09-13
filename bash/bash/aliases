@@ -37,6 +37,9 @@ alias lzd='lazydocker'
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
 alias gcad='git commit -a --amend'
+alias gls="git log --pretty=format:'%C(auto)%h %C(bold blue)%an%Creset %C(green)%ad%Creset %C(yellow)%d%Creset %C(reset)- %s' --date=short --graph --abbrev-commit --decorate --all"
+alias glso="git log --pretty=format:'%C(auto)%h %C(bold blue)%an%Creset %C(green)%ad%Creset %C(yellow)%d%Creset %C(reset)- %s' --date=short --graph --abbrev-commit --decorate "
+alias gb="git branch --show-current"
 
 # Compression
 compress() { tar -czf "${1%/}.tar.gz" "${1%/}"; }
@@ -54,9 +57,6 @@ webm2mp4() {
 
 alias keys="n ~/bash/aliases"
 
-alias gls="git log --pretty=format:'%C(auto)%h %C(bold blue)%an%Creset %C(green)%ad%Creset %C(yellow)%d%Creset %C(reset)- %s' --date=short --graph --abbrev-commit --decorate --all"
-alias glso="git log --pretty=format:'%C(auto)%h %C(bold blue)%an%Creset %C(green)%ad%Creset %C(yellow)%d%Creset %C(reset)- %s' --date=short --graph --abbrev-commit --decorate "
-alias gb="git branch --show-current"
 ##conda Alias
 
 # python env activator
