@@ -51,5 +51,12 @@ source ~/.zshinputcr
 source ~/bash/aliases
 
 
+# If inside a project venv and .venvrc exists, source it
+if [[ -n "$VIRTUAL_ENV" && -f "$(dirname "$VIRTUAL_ENV")/.venvrc" ]]; then
+    source "$(dirname "$VIRTUAL_ENV")/.venvrc"
+fi
+
+
+
 eval "$(zoxide init zsh)"
 
