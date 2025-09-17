@@ -46,10 +46,17 @@ bindkey '^X^E' edit-command-line
 bindkey -e
 ##############################################################
 
+source /usr/share/nvm/init-nvm.sh 
 source ~/.zshinputcr
 source ~/bash/aliases
 
-source /usr/share/nvm/init-nvm.sh 
+
+# If inside a project venv and .venvrc exists, source it
+if [[ -n "$VIRTUAL_ENV" && -f "$(dirname "$VIRTUAL_ENV")/.venvrc" ]]; then
+    source "$(dirname "$VIRTUAL_ENV")/.venvrc"
+fi
+
+
 
 eval "$(zoxide init zsh)"
 
