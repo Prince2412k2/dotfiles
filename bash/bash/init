@@ -5,10 +5,14 @@ fi
 source /usr/share/nvm/init-nvm.sh 
 
 
-# If inside a project venv and .postactivate exists, source it
-if [[ -n "$VIRTUAL_ENV" && -f "$(dirname "$VIRTUAL_ENV")/.venvrc" ]]; then
-    source "$(dirname "$VIRTUAL_ENV")/.venvrc"
+# If inside a project venv and .venvrc exists, source it
+if [[ -d .venv ]]; then
+    source act
+    if [[ -f .venvrc ]]; then
+        source .venvrc
+    fi
 fi
+
 
 if command -v fzf &> /dev/null; then
   source ~/.local/share/fzf/completion.bash

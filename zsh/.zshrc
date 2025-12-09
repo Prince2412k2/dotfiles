@@ -52,11 +52,15 @@ source ~/bash/aliases
 
 
 # If inside a project venv and .venvrc exists, source it
-if [[ -n "$VIRTUAL_ENV" && -f "$(dirname "$VIRTUAL_ENV")/.venvrc" ]]; then
-    source "$(dirname "$VIRTUAL_ENV")/.venvrc"
+if [[ -d .venv ]]; then
+    source act >/dev/null 2>&1
+    if [[ -f .venvrc ]]; then
+        source .venvrc
+    fi
 fi
 
-
-
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 eval "$(zoxide init zsh)"
 
+export TESSDATA_PREFIX=/usr/share/tessdata/
+export PATH="$HOME/.local/bin:$PATH"
