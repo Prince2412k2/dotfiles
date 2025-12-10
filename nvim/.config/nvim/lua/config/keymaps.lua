@@ -6,3 +6,6 @@ vim.api.nvim_set_keymap("n", "<TAB>", "i<TAB>", { noremap = true, silent = true 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>")
+
+-- Open Neo-tree Explorer
+vim.keymap.set("n", "<leader>e", "<cmd>Explore<cr>", { desc = "Netrw Explore" })
