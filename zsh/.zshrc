@@ -18,6 +18,9 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+# Suppress warning but keep instant prompt
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
 
 source ~/.local/share/fzf/completion.zsh
 source ~/.local/share/fzf/key-bindings.zsh
@@ -30,7 +33,7 @@ export VISUAL=nvim
 #path
 export PATH="$PATH:$HOME/.local/scripts"
 export PATH="/$PATH:$HOME/.cargo/bin/"
-export PATH=$PATH:/home/prince/.spicetify
+export PATH=$PATH:/home/prince/.local/bin
 
 
 #############sessionizer######################################
@@ -51,12 +54,21 @@ source ~/.zshinputcr
 source ~/bash/aliases
 
 
-# If inside a project venv and .venvrc exists, source it
-if [[ -n "$VIRTUAL_ENV" && -f "$(dirname "$VIRTUAL_ENV")/.venvrc" ]]; then
-    source "$(dirname "$VIRTUAL_ENV")/.venvrc"
+# Check if .venv exists in the current directory
+if [[ -d ".venv" ]]; then
+    # Run 'act'
+    source act
+    # If there's a .venvrc inside .venv, source it
+    if [[ -f ".venv/.venvrc" ]]; then
+        source ".venv/.venvrc"
+    fi
 fi
 
 
 
 eval "$(zoxide init zsh)"
 
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+zstyle ':completion:*' menu select

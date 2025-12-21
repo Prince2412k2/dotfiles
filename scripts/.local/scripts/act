@@ -10,7 +10,6 @@ activate_env_glob() {
   selected=$(fd -HI --type f --full-path '/bin/activate$' "${DIRS_TO_CHECK[@]}" --absolute-path | awk -F'/' '{ print $(NF-3),"->",$0 }' |fzf --delimiter=' ' | awk '{ print $3 }')
   if [ -n "$selected" ]; then
     source "$selected"
-    echo "Activated: $selected"
   fi
 }
 
@@ -18,7 +17,7 @@ get_env() {
   for dir in ".env" ".venv"; do
     if [ -f "$dir/bin/activate" ]; then
       source "$dir/bin/activate"
-      echo "Activated $dir"
+      notify-send "Activated $dir"
       return
     fi
   done

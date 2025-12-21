@@ -7,7 +7,7 @@ export SUDO_EDITOR="$EDITOR"
 #add scripts to path
 export PATH="$PATH:$HOME/.local/scripts"
 export PATH="/$PATH:$HOME/.cargo/bin/"
-export PATH=$PATH:/home/prince/.spicetify
+export PATH=$PATH:/home/prince/.local/bin
 
 #tmux-sessionizer
 bind '"\C-f":"tmux-sessionizer\n"'
