@@ -30,7 +30,6 @@ export VISUAL=nvim
 #path
 export PATH="$PATH:$HOME/.local/scripts"
 export PATH="/$PATH:$HOME/.cargo/bin/"
-export PATH=$PATH:/home/prince/.spicetify
 
 
 #############sessionizer######################################
