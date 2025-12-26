@@ -53,10 +53,10 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               1px;
     border-color:                @border-colour;
     cursor:                      "default";
-    background-color:            @background-colour;
+    background-color:            #00000080;
 }
 
 /*****----- Main Box -----*****/
@@ -81,26 +81,27 @@ inputbar {
     border:                      0px 0px 1px 0px;
     border-radius:               0px;
     border-color:                @border-colour;
-    background-color:            @background-colour;
+    background-color:            transparent;
     text-color:                  @foreground-colour;
     children:                    [ "entry" ];
 }
 
 prompt {
     enabled:                     true;
-    background-color:            inherit;
+    background-color:            transparent;
     text-color:                  inherit;
 }
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
     str:                         ":";
-    background-color:            inherit;
+    background-color:            transparent;
     text-color:                  inherit;
 }
 entry {
     enabled:                     true;
-    background-color:            inherit;
+
+    background-color:            transparent;
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "search...";
@@ -187,7 +188,6 @@ element alternate.active {
     text-color:                  var(alternate-active-background);
 }
 element-icon {
-    background-color:            transparent;
     text-color:                  inherit;
     size:                        24px;
     cursor:                      inherit;
@@ -218,7 +218,7 @@ button {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
-    background-color:            @background-colour;
+    background-color:            transparent;
     text-color:                  inherit;
     cursor:                      pointer;
 }
@@ -243,7 +243,7 @@ textbox {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
-    background-color:            @background-colour;
+    background-color:            transparent;
     text-color:                  @border-colour;
     vertical-align:              0.5;
     horizontal-align:            0.0;
@@ -257,6 +257,6 @@ error-message {
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @border-colour;
-    background-color:            @background-colour;
+    background-color:            transparent;
     text-color:                  @foreground-colour;
 }
