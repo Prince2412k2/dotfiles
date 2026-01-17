@@ -18,9 +18,6 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-# Suppress warning but keep instant prompt
-typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-
 
 source ~/.local/share/fzf/completion.zsh
 source ~/.local/share/fzf/key-bindings.zsh
@@ -33,7 +30,6 @@ export VISUAL=nvim
 #path
 export PATH="$PATH:$HOME/.local/scripts"
 export PATH="/$PATH:$HOME/.cargo/bin/"
-export PATH=$PATH:/home/prince/.local/bin
 
 
 #############sessionizer######################################
@@ -54,21 +50,16 @@ source ~/.zshinputcr
 source ~/bash/aliases
 
 
-# Check if .venv exists in the current directory
-if [[ -d ".venv" ]]; then
-    # Run 'act'
-    source act
-    # If there's a .venvrc inside .venv, source it
-    if [[ -f ".venv/.venvrc" ]]; then
-        source ".venv/.venvrc"
+# If inside a project venv and .venvrc exists, source it
+if [[ -d .venv ]]; then
+    source act >/dev/null 2>&1
+    if [[ -f .venvrc ]]; then
+        source .venvrc
     fi
 fi
 
-
-
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 eval "$(zoxide init zsh)"
 
-
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
-
-zstyle ':completion:*' menu select
+export TESSDATA_PREFIX=/usr/share/tessdata/
+export PATH="$HOME/.local/bin:$PATH"

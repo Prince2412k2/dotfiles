@@ -63,5 +63,6 @@ alias keys="n ~/bash/aliases"
 # python env activator
 alias act="source act"
 
+alias spip="pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org"
 
 set +h
