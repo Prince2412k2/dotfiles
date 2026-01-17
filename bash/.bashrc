@@ -13,3 +13,5 @@ export PATH=$PATH:/home/prince/.local/bin
 bind '"\C-f":"tmux-sessionizer\n"'
 
 set -o hashall
+
+

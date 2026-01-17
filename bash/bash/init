@@ -21,6 +21,9 @@ fi
 export AUTOENV_HOME="$HOME/.autoenv"
 [[ -f "$AUTOENV_HOME/activate.sh" ]] && source "$AUTOENV_HOME/activate.sh"
 
+if [ "$TERM" = "xterm-ghostty" ]; then
+  export TERM=xterm-256color
+fi
 
 
 eval "$(starship init bash)"
@@ -28,5 +31,4 @@ eval "$(starship init bash)"
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init bash)"
 fi
-
 

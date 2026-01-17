@@ -2,3 +2,4 @@ depends.sh
 do.sh
 move.sh
 pkg.txt
+bin/

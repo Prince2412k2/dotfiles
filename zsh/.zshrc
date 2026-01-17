@@ -72,3 +72,7 @@ eval "$(zoxide init zsh)"
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 zstyle ':completion:*' menu select
+
+if [ "$TERM" = "xterm-ghostty" ]; then
+  export TERM=xterm-256color
+fi
