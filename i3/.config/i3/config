@@ -3,15 +3,15 @@ font MesloLGS Nerd Font Mono 8
 floating_modifier $mod
 
 # start a terminal
-set $term ghostty
-bindsym Mod1+ctrl+t exec $term
+set $term alacritty
+bindsym Mod4+q exec $term
 
 # kill focused window
-bindsym Mod1+q kill
+bindsym Mod4+c kill
 
 # start dmenu (a program launcher)
 #bindsym ctrl+space exec rofi -show run
-bindsym ctrl+space exec "rofi -show combi -modi window,run,combi -combi-modi window,run"
+bindsym ctrl+space exec "rofi -show drun"
 #bindsym ctrl+space exec dmenu_run
 
 #Clipboard

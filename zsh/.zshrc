@@ -22,6 +22,8 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.local/share/fzf/completion.zsh
 source ~/.local/share/fzf/key-bindings.zsh
 
+export TESSDATA_PREFIX=/usr/share/tessdata/
+export PATH="$HOME/.local/bin:$PATH"
 
 
 export EDITOR=nvim
@@ -45,7 +47,6 @@ bindkey '^X^E' edit-command-line
 bindkey -e
 ##############################################################
 
-source /usr/share/nvm/init-nvm.sh 
 source ~/.zshinputcr
 source ~/bash/aliases
 
@@ -61,5 +62,7 @@ fi
 export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 eval "$(zoxide init zsh)"
 
-export TESSDATA_PREFIX=/usr/share/tessdata/
-export PATH="$HOME/.local/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
