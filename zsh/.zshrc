@@ -72,3 +72,7 @@ eval "$(zoxide init zsh)"
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
 zstyle ':completion:*' menu select
+export PATH="/home/prince/custom/bin:$PATH"
+
+# opencode
+export PATH=/home/prince/.opencode/bin:$PATH

@@ -1,6 +1,7 @@
 {
-  "layer": "top",
+  "layer": "overlay",
   "position": "top",
+  // "exclusive": false,
   "height": 0,
   "modules-left": [
     "hyprland/workspaces"

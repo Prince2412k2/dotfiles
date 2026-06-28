@@ -9,8 +9,11 @@ main() {
   fi
 
   cat >~/.config/hypr/hyprpaper.conf <<EOF
-preload = $path
-wallpaper = eDP-1, $path
+wallpaper {
+    monitor = eDP-1
+    path = $path
+    fit_mode = cover
+}
 EOF
 
   pkill hyprpaper || true
